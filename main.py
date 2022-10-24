@@ -20,25 +20,11 @@
 
 # 5 If the user has not guessed correctly in their first attempt, they will be asked again to choose another number and so on until they win or until their eight attempts are done.
 
+from gamer import game
+
 name = input("What is your name? ")
 print(f'Well {name}, I have thought of a number between 1 and 100 and you have only eight tries to guess it. What number do you think it is?')
 
-max_guess = 9
-attempt = 0
-number = 18
-guess = int(input("Guess: "))
-
-while number != guess:
-    attempt += 1
-    guess = int(input("Repeat Guess: "))
-    if guess == number:
-        print ("You Won")
-        break
-    elif attempt == max_guess:
-        print("Out of guesses")
-        break
-    elif guess > number:
-        print ("Wrong. You chose a number greater than the secret number")
-    elif guess < number:
-        print('Wrong. You chose a number less than the secret number')
+game() 
+      
       
